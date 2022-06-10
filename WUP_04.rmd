@@ -26,6 +26,11 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
+```{r}
+gssDataframe=read.csv("GSScsv.csv")
+```
+WORDSUM is a Numerical variable, DEGREE is a Categorical variable.
+
 # Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
@@ -34,6 +39,11 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 
 ### Graphical Descriptive Results
 
+```{r}
+boxplot(WORDSUM~DEGREE,data=gssDataframe)
+```
+
+The box plot shows that students in LT High School have a lower median than the students in High School and Bachelor.
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
 
 ### Numerical Descriptive Results
