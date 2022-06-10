@@ -60,7 +60,24 @@ It appears that this table shows that the median of the Graduate students is the
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
+```{r}
+model1 <- aov(WORDSUM~DEGREE,data=gssDataframe)
+summary.aov(model1)
+```
+
+The p-value is 0.000236. Due to the p-value being less than 0.05, we reject the null hypothesis.
+
+
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 15, 2, 2))
+plot(TukeyHSD(model1),las=2)
+```
+
+Based on the information provided in the graph there is a difference between the high school & graduates as well as the LT high school individuals and Graduates. This is due to the levels not crossing or being zero.
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+Basing my conclusion on the graph there is a significant difference the variables. Due to this reason, the null hypothesis has been rejected.
